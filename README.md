@@ -2,7 +2,7 @@
 
 Esta é uma solução para o [desafio do formulário de detalhes do cartão interativo no Frontend Mentor](https://www.frontendmentor.io/challenges/interactive-card-details-form-XpS8cKZDWw). Os desafios do Frontend Mentor ajudam você a melhorar suas habilidades de codificação através da construção de projetos realistas.
 
-## Table of contents
+## Índice
 
 - [Overview](#overview)
   - [O desafio](#O-desafio)
@@ -13,7 +13,6 @@ Esta é uma solução para o [desafio do formulário de detalhes do cartão inte
   - [O que eu aprendi](#O-que-eu-aprendi)
 - [Autor](#autor)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 

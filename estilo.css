@@ -1,0 +1,186 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500&display=swap');
+
+:root{
+    --fonte: 'Space Grotesk', Arial, sans-serif;
+    --branco: hsl(0, 0%, 100%);
+    --roxo_claro: hsl(270, 3%, 87%);
+    --roxo: hsl(279, 6%, 55%);
+    --roxo_escuro: hsl(278, 68%, 11%);
+    --vermelho: hsl(0, 100%, 66%);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: var(--fonte);
+    font-size: 18px;
+    letter-spacing: .1em;
+    transition: all ease-in-out .8s;
+}
+
+body,html{
+    height: 100vh;
+    width: 100vw;
+    min-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+main #card{
+    width: 100vw;
+    height: 230px;
+    background: var(--roxo) url(/images/bg-main-mobile.png) center center scroll no-repeat;
+    background-size: cover;
+}
+
+main #card #front{
+    width: 350px;
+    height: 192px;
+    margin: 0 auto;
+    border-radius: 10px;
+    background: var(--roxo_claro) url(/images/bg-card-front.png) center center scroll no-repeat;
+    background-size: contain;
+    color: var(--branco);
+    transform: scale(0.8);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items:center;
+    position: absolute;
+    z-index: 2;
+    top: 102px;
+    left: -10px;
+}
+
+main #card #front #marca{
+    display: flex;
+    align-items: center;
+    align-self: self-start;
+}
+
+main #card #front #marca #bola_grande{
+    width: 50px;
+    height: 50px;
+    background-color: var(--branco);
+    border-radius: 50%;
+    margin: 20px 10px 20px 20px;
+}
+
+main #card #front #marca #bola_pequena{
+    width: 25px;
+    height: 25px;
+    border: 1.5px solid var(--branco);
+    border-radius: 50%;
+}
+
+main #card #front #numero{
+    flex-basis: 100%;
+    font-size: 1.3em;
+    position: relative;
+    padding: 20px 20px 10px 20px;
+}
+
+main #card #front #nome, main #card #front #data{
+    font-size: .7em;
+    font-weight: 300;
+    padding: 0px 20px 20px 20px;
+}
+
+main #card #back{
+    width: 350px;
+    height: 192px;
+    margin: 0 auto;
+    border-radius: 10px;
+    background: var(--roxo_claro) url(/images/bg-card-back.png) center center scroll no-repeat;
+    background-size: contain;
+    transform: scale(0.8);
+    position: absolute;
+    z-index: 1;
+    top: 15px;
+    left: 55px;
+}
+
+main #card #back #cvc{
+    color: var(--branco);
+    padding: 3.5px;
+    position: absolute;
+    top: 79px;
+    left: 275px;
+}
+
+main #formulario{
+    width: 350px;
+    height: auto;
+    margin: 50px auto 20px;
+}
+
+main #formulario form{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+main #formulario form .agrupamento{
+    margin: 10px 0;
+}
+
+main #formulario form #dado_data{
+    flex-basis: 50%;
+}
+
+main #formulario form #dado_cvc{
+    flex-basis: 50%;
+}
+
+main #formulario form input{
+    width: calc(100% - 15px);
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 2px solid;
+    border-color: var(--roxo_claro);
+    color: var(--roxo_escuro);
+    padding: 5px 
+}
+
+main #formulario form input::placeholder{
+    color: var(--roxo);
+}
+
+main #formulario form label{
+    color: var(--roxo_escuro);
+    font-size: 0.9em;
+}
+
+main #formulario form select{
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 2px solid;
+    border-color: var(--roxo_claro);
+    color: var(--roxo_escuro);
+    padding: 5px;
+}
+
+main #formulario form p{
+    color: var(--vermelho);
+    font-size: 1em;
+    text-align: center;
+}
+
+main #formulario form button{
+    width: 100%;
+    height: 50px;
+    background-color: var(--roxo_escuro);
+    color: var(--roxo_claro);
+    border-radius: 7px;
+    margin-top: 10px;
+    border: none;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}

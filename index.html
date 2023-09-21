@@ -1,51 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="estilo.css">
+  <script defer src="script.js"></script>
   <title>Frontend Mentor | Interactive card details form</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
-
-  0000 0000 0000 0000
-  Jane Appleseed
-  00/00
-
-  000
-
-  Cardholder Name
-  e.g. Jane Appleseed
-
-  Card Number
-  e.g. 1234 5678 9123 0000
-
-  Exp. Date (MM/YY)
-  MM
-  YY
-
-  CVC
-  e.g. 123
-
-  Confirm
-
-  <!-- Completed state start -->
-
-  Thank you!
-  We've added your card details
-  Continue
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+  <main>
+    <section id="card">
+      <div id="front">
+        <div id="marca">
+          <div id="bola_grande"></div>
+          <div id="bola_pequena"></div>
+        </div>
+        <p id="numero"> 0000 0000 0000 0000</p>
+        <p id="nome">MARIA F. DA SILVA</p>
+        <p id="data">00/00</p>
+      </div>
+      <div id="back">
+        <p id="cvc">000</p>
+      </div>
+    </section>
+    <section id="formulario">
+      <form>
+        <div class="agrupamento" id="dado_nome">
+          <label for="inome">NOME DO TITULAR</label>
+          <input type="text" id="inome" placeholder="Ex. Maria da Silva" autocomplete="name" required>
+        </div>
+        <div class="agrupamento" id="dado_numero">
+          <label for="inum">NÚMERO DO CARTÃO</label>
+          <input type="text" id="inum" autocomplete="none" placeholder="0000 0000 0000 0000" maxlength="19" minlength="19">
+        </div>
+        <div class="agrupamento" id="dado_data">
+          <label>VALIDADE</label><br>
+          <select id="imes">
+            <option value="00">00</option>
+          </select>
+          <select id="iano">
+            <option value="2023">2023</option>
+          </select>
+        </div>
+        <div class="agrupamento" id="dado_cvc">
+          <label for="icvc">CVC</label><br>
+          <input type="text" id="icvc" placeholder="000" maxlength="3" minlength="3">
+        </div>
+        <button>CONFIRMAR</button>
+      </form>
+    </section>
+  </main>
+  <footer>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="https://pablobezerra.github.io" target="_parent">Pablo Bezerra</a>.
+    </div>
+  </footer>
 </body>
 </html>

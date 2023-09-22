@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
   <link rel="stylesheet" href="estilo.css">
   <script defer src="script.js"></script>
   <title>Frontend Mentor | Interactive card details form</title>
@@ -18,7 +19,10 @@
         </div>
         <p id="numero"> 0000 0000 0000 0000</p>
         <p id="nome">MARIA F. DA SILVA</p>
-        <p id="data">00/00</p>
+        <div id="data">
+          <p id="mes">00</p>/
+          <p id="ano">00</p>
+        </div>
       </div>
       <div id="back">
         <p id="cvc">000</p>
@@ -28,33 +32,40 @@
       <form>
         <div class="agrupamento" id="dado_nome">
           <label for="inome">NOME DO TITULAR</label>
-          <input type="text" id="inome" placeholder="Ex. Maria da Silva" autocomplete="name" required>
+          <input type="text" id="inome" placeholder="Ex. Maria F. da Silva" autocomplete="name" oninput="atualizar(1)" required>
         </div>
         <div class="agrupamento" id="dado_numero">
           <label for="inum">NÚMERO DO CARTÃO</label>
-          <input type="text" id="inum" autocomplete="none" placeholder="0000 0000 0000 0000" maxlength="19" minlength="19">
+          <input type="text" id="inum" autocomplete="none" placeholder="0000 0000 0000 0000" maxlength="19" minlength="19" oninput="atualizar(2)" required>
+          <span class="material-symbols-outlined" id="close" >close</span>
         </div>
         <div class="agrupamento" id="dado_data">
           <label>VALIDADE</label><br>
-          <select id="imes">
-            <option value="00">00</option>
+          <select id="imes" oninput="atualizar(3)" required>
+            <option value="">mês</option>
           </select>
-          <select id="iano">
-            <option value="2023">2023</option>
+          <select id="iano" oninput="atualizar(4)" required>
+            <option value="">ano</option>
           </select>
         </div>
         <div class="agrupamento" id="dado_cvc">
           <label for="icvc">CVC</label><br>
-          <input type="text" id="icvc" placeholder="000" maxlength="3" minlength="3">
+          <input type="text" id="icvc" placeholder="000" maxlength="3" minlength="3" oninput="atualizar(5)" required>
         </div>
-        <button>CONFIRMAR</button>
+        <button type="button" onclick="finalizar()">Confirmar</button>
       </form>
+    </section>
+    <section id="final" >
+      <svg width="80" height="80" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="40" cy="40" r="40" fill="url(#a)"/><path d="M28 39.92 36.08 48l16-16" stroke="#fff" stroke-width="3"/><defs><linearGradient id="a" x1="-23.014" y1="11.507" x2="0" y2="91.507" gradientUnits="userSpaceOnUse"><stop stop-color="#6348FE"/><stop offset="1" stop-color="#610595"/></linearGradient></defs></svg>
+      <h2>OBRIGADO!</h2>
+      <p>Adiconamos os dados do seu cartão na nossa base de dados</p>
+      <button> Concluir</button>
     </section>
   </main>
   <footer>
     <div class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-      Coded by <a href="https://pablobezerra.github.io" target="_parent">Pablo Bezerra</a>.
+      Coded by <a href="https://pablobezerra.github.io" target="_blank">Pablo Bezerra</a>.
     </div>
   </footer>
 </body>

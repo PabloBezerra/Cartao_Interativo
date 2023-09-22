@@ -13,16 +13,17 @@
 *{
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
     font-family: var(--fonte);
     font-size: 18px;
     letter-spacing: .1em;
-    transition: all ease-in-out .8s;
+    transition: all ease-in-out .5s;
 }
 
 body,html{
     height: 100vh;
-    width: 100vw;
-    min-width: 400px;
+    width: 400px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,10 +31,11 @@ body,html{
 }
 
 main #card{
-    width: 100vw;
+    width: 400px;
     height: 230px;
     background: var(--roxo) url(/images/bg-main-mobile.png) center center scroll no-repeat;
     background-size: cover;
+    position: relative;
 }
 
 main #card #front{
@@ -83,10 +85,19 @@ main #card #front #numero{
     padding: 20px 20px 10px 20px;
 }
 
-main #card #front #nome, main #card #front #data{
+main #card #front #nome{
+    font-size: .8em;
+    font-weight: 300;
+    text-transform: uppercase;
+    padding: 0px 20px 20px 20px;
+}
+
+main #card #front #data{
+    display: flex;
+    align-items: center;
+    padding: 0px 20px 20px 20px;
     font-size: .7em;
     font-weight: 300;
-    padding: 0px 20px 20px 20px;
 }
 
 main #card #back{
@@ -108,7 +119,7 @@ main #card #back #cvc{
     padding: 3.5px;
     position: absolute;
     top: 79px;
-    left: 275px;
+    left: 260px;
 }
 
 main #formulario{
@@ -129,6 +140,16 @@ main #formulario form .agrupamento{
     margin: 10px 0;
 }
 
+main #formulario form #dado_numero{
+    position: relative;
+}
+
+main #formulario form #dado_numero:focus-within span{
+    visibility: visible;
+    height: 25px;
+    overflow: auto;
+}
+
 main #formulario form #dado_data{
     flex-basis: 50%;
 }
@@ -137,14 +158,39 @@ main #formulario form #dado_cvc{
     flex-basis: 50%;
 }
 
+main #formulario form span{
+    height: 0;
+    position: absolute;
+    z-index: 1;
+    right: 10px;
+    top: 45px;
+    color: var(--roxo);
+    visibility: hidden;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+main #formulario form span:hover{
+    color: var(--roxo_claro);
+    background-color: var(--roxo_escuro);
+    border-radius: 50%;
+}
+
 main #formulario form input{
-    width: calc(100% - 15px);
+    width: 100%;
+    height: 40px;
     margin: 10px 0;
     border-radius: 5px;
-    border: 2px solid;
-    border-color: var(--roxo_claro);
+    border: 2px solid var(--roxo_claro);
     color: var(--roxo_escuro);
-    padding: 5px 
+    padding: 5px ;
+    outline: none;
+}
+
+main #formulario form input:focus-within{
+    height: 50px ;
+    border: 2px solid var(--roxo_claro);
+    border-image: linear-gradient(45deg, hsl(249, 99%, 64%), hsl(278, 94%, 30%)) 1;
 }
 
 main #formulario form input::placeholder{
@@ -153,10 +199,11 @@ main #formulario form input::placeholder{
 
 main #formulario form label{
     color: var(--roxo_escuro);
-    font-size: 0.9em;
+    font-size: 0.9 em;
 }
 
 main #formulario form select{
+    height: 40px;
     margin: 10px 0;
     border-radius: 5px;
     border: 2px solid;
@@ -167,11 +214,11 @@ main #formulario form select{
 
 main #formulario form p{
     color: var(--vermelho);
-    font-size: 1em;
+    font-size: .8em;
     text-align: center;
 }
 
-main #formulario form button{
+main #formulario form button, main #final button{
     width: 100%;
     height: 50px;
     background-color: var(--roxo_escuro);
@@ -179,6 +226,49 @@ main #formulario form button{
     border-radius: 7px;
     margin-top: 10px;
     border: none;
+}
+
+main #final{
+    width: 350px;
+    height: auto;
+    margin: 70px auto 20px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+main #final h2{
+    font-size: 2em;
+    color: var(--roxo_escuro);
+    margin: 20px 0;
+}
+
+main #final p{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+footer{
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    background-color: var(--roxo);
+    align-self: flex-end;
+}
+
+footer .attribution{
+    color: var(--roxo_escuro);
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: normal;
+    font-size: .8em;
+    padding: 5px;
+}
+
+footer .attribution a{
+    color: var(--branco);
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: normal;
+    font-size: .8em;
 }
 
 ::-webkit-scrollbar{

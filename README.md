@@ -38,7 +38,7 @@ Os usuários devem ser capazes de:
 ### Links
 
 - URL do desafio: https://www.frontendmentor.io/challenges/interactive-card-details-form-XpS8cKZDWw
-- URL do site: [Add live site URL here](https://your-live-site-url.com)
+- URL do site: https://pablobezerra.github.io/Cartao_interativo/
 
 ## Meu Processo
 

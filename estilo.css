@@ -1,6 +1,8 @@
+/* Importações*/
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500&display=swap');
 
+/* Variáveis */
 :root{
     --fonte: 'Space Grotesk', Arial, sans-serif;
     --branco: hsl(0, 0%, 100%);
@@ -9,6 +11,8 @@
     --roxo_escuro: hsl(278, 68%, 11%);
     --vermelho: hsl(0, 100%, 66%);
 }
+
+/* Configuração geral inicial */
 
 *{
     padding: 0;
@@ -19,7 +23,6 @@
     letter-spacing: .1em;
     transition: all ease-in-out .5s;
 }
-
 body,html{
     height: 100vh;
     width: 400px;
@@ -30,6 +33,8 @@ body,html{
 
 }
 
+/* Configurando o card */
+
 main #card{
     width: 400px;
     height: 230px;
@@ -37,8 +42,7 @@ main #card{
     background-size: cover;
     position: relative;
 }
-
-main #card #front{
+main #card #front{ /* Parte frontal do card */
     width: 350px;
     height: 192px;
     margin: 0 auto;
@@ -56,13 +60,11 @@ main #card #front{
     top: 102px;
     left: -10px;
 }
-
 main #card #front #marca{
     display: flex;
     align-items: center;
     align-self: self-start;
 }
-
 main #card #front #marca #bola_grande{
     width: 50px;
     height: 50px;
@@ -70,28 +72,24 @@ main #card #front #marca #bola_grande{
     border-radius: 50%;
     margin: 20px 10px 20px 20px;
 }
-
 main #card #front #marca #bola_pequena{
     width: 25px;
     height: 25px;
     border: 1.5px solid var(--branco);
     border-radius: 50%;
 }
-
-main #card #front #numero{
+main #card #front #cardNum{
     flex-basis: 100%;
     font-size: 1.3em;
     position: relative;
     padding: 20px 20px 10px 20px;
 }
-
-main #card #front #nome{
+main #card #front #cardNome{
     font-size: .8em;
     font-weight: 300;
     text-transform: uppercase;
     padding: 0px 20px 20px 20px;
 }
-
 main #card #front #data{
     display: flex;
     align-items: center;
@@ -99,8 +97,7 @@ main #card #front #data{
     font-size: .7em;
     font-weight: 300;
 }
-
-main #card #back{
+main #card #back{ /* Parte traseira do card */
     width: 350px;
     height: 192px;
     margin: 0 auto;
@@ -113,8 +110,7 @@ main #card #back{
     top: 15px;
     left: 55px;
 }
-
-main #card #back #cvc{
+main #card #back #cardCvc{
     color: var(--branco);
     padding: 3.5px;
     position: absolute;
@@ -122,12 +118,13 @@ main #card #back #cvc{
     left: 260px;
 }
 
+/* Configurando o formulário */
+
 main #formulario{
     width: 350px;
     height: auto;
     margin: 50px auto 20px;
 }
-
 main #formulario form{
     width: 100%;
     height: auto;
@@ -135,89 +132,78 @@ main #formulario form{
     flex-direction: row;
     flex-wrap: wrap;
 }
-
 main #formulario form .agrupamento{
     margin: 10px 0;
 }
-
 main #formulario form #dado_numero{
     position: relative;
 }
-
 main #formulario form #dado_numero:focus-within span{
     visibility: visible;
     height: 25px;
     overflow: auto;
 }
-
 main #formulario form #dado_data{
     flex-basis: 50%;
 }
-
 main #formulario form #dado_cvc{
     flex-basis: 50%;
 }
-
 main #formulario form span{
     height: 0;
     position: absolute;
     z-index: 1;
     right: 10px;
-    top: 45px;
+    top: 42px;
     color: var(--roxo);
     visibility: hidden;
     overflow: hidden;
     cursor: pointer;
 }
-
 main #formulario form span:hover{
     color: var(--roxo_claro);
     background-color: var(--roxo_escuro);
     border-radius: 50%;
 }
-
 main #formulario form input{
     width: 100%;
     height: 40px;
-    margin: 10px 0;
+    margin: 5px 0;
     border-radius: 5px;
     border: 2px solid var(--roxo_claro);
     color: var(--roxo_escuro);
     padding: 5px ;
     outline: none;
 }
-
 main #formulario form input:focus-within{
     height: 50px ;
     border: 2px solid var(--roxo_claro);
     border-image: linear-gradient(45deg, hsl(249, 99%, 64%), hsl(278, 94%, 30%)) 1;
 }
-
 main #formulario form input::placeholder{
     color: var(--roxo);
 }
-
+main #formulario form p{
+    display: none;
+}
 main #formulario form label{
     color: var(--roxo_escuro);
     font-size: 0.9 em;
 }
-
 main #formulario form select{
     height: 40px;
-    margin: 10px 0;
+    margin: 5px 0;
     border-radius: 5px;
     border: 2px solid;
     border-color: var(--roxo_claro);
     color: var(--roxo_escuro);
     padding: 5px;
 }
-
 main #formulario form p{
     color: var(--vermelho);
-    font-size: .8em;
+    font-size: .7em;
     text-align: center;
 }
-
 main #formulario form button, main #final button{
     width: 100%;
     height: 50px;
@@ -228,6 +214,8 @@ main #formulario form button, main #final button{
     border: none;
 }
 
+/* Configurando a tela final */
+
 main #final{
     width: 350px;
     height: auto;
@@ -236,17 +224,17 @@ main #final{
     flex-direction: column;
     align-items: center;
 }
-
 main #final h2{
     font-size: 2em;
     color: var(--roxo_escuro);
     margin: 20px 0;
 }
-
 main #final p{
     text-align: center;
     margin-bottom: 10px;
 }
+
+/* Configurando o rodapé */
 
 footer{
     width: 400px;
@@ -255,7 +243,6 @@ footer{
     background-color: var(--roxo);
     align-self: flex-end;
 }
-
 footer .attribution{
     color: var(--roxo_escuro);
     font-family: Arial, Helvetica, sans-serif;
@@ -263,13 +250,14 @@ footer .attribution{
     font-size: .8em;
     padding: 5px;
 }
-
 footer .attribution a{
     color: var(--branco);
     font-family: Arial, Helvetica, sans-serif;
     letter-spacing: normal;
     font-size: .8em;
 }
+
+/* Configurações extras */
 
 ::-webkit-scrollbar{
     display: none;

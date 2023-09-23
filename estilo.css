@@ -34,7 +34,9 @@ body,html{
 }
 
 /* Configurando o card */
-
+main{
+    height: 100vh;
+}
 main #card{
     width: 400px;
     height: 230px;
